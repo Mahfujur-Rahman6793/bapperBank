@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl text-center mt-16 ">Let's get <span class="text-emerald-600 font-semibold">Moneeeey........!!!!</span></h1> 
+   </header>
+   <main class="w-3/4 mx-auto mt-16">
+    <section class="mt-8 text-white">
+        <div class="grid grid-cols-3 gap-4 ">
+            <div class="bg-red-400 p-8 rounded">
+                <h3 class="text-3xl">Deposite</h3>
+                <h4 class="text-4xl">$<span id="initial_deposite">00</span></h4>
+            </div>
+            <div class="bg-orange-400 p-8 rounded">
+                <h3 class="text-3xl">Withdraw</h3>
+                <h4 class="text-4xl">$<span id="initial_withdraw">00</span></h4>
+            </div>
+            <div class="bg-lime-400 p-8 rounded">
+                <h3 class="text-3xl">Balance</h3>
+                <h4 class="text-4xl">$<span id="initial_balance">400</span></h4>
+            </div>
+            
+        </div>
+    </section>
+    <section class="mt-8 ">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-green-300 p-8 rounded">
+                <h3 class="text-2xl mb-3 text-black">Please Enter Your Deposite Balance</h3>
+                <input type="text" id="enterAmount" class="border rounded-r block border-red-300 w-3/4 mb-2 px-2" placeholder="$ Enter your deposite Balance">
+                <button id="deposite-submit" class="bg-orange-400 mt-3 px-4 py-2 text-white font-medium rounded ">Deposite</button>
+            </div>
+            <div class="bg-sky-300 p-8 rounded">
+                <h3 class="text-2xl mb-3 text-black">Please Enter Your Withdral Balance</h3>
+                <input type="text" id="withdralAmount" class="border rounded-r block border-red-300 w-3/4 mb-2 px-2" placeholder="$ Enter your deposite Balance">
+                <button id="withdrawal-submit" class="bg-orange-400 mt-3 px-4 py-2 text-white font-medium rounded ">Withdraw</button>
+            </div>
+        </div>
+    </section>
+   </main>
+    <script src="bank.js"></script>
+</body>
+</html>
