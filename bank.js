@@ -27,11 +27,18 @@ function updateTotalField(id_2,boxValue) {
     initialBoxValue.innerText = afterUpdateField;
 }
 
+function currentBalance() {
+    const initialBalance = document.getElementById('initial_balance');
+    const initialBalanceText = parseFloat(initialBalance.innerText);
+    return initialBalanceText;
+}
+
 // Balance
 function BalanceHandle(fileldInput,isAdd) {
     const initialBalance = document.getElementById('initial_balance');
     // console.log(initialDepositeText);
-    const initialBalanceText = parseFloat(initialBalance.innerText);
+    // const initialBalanceText = parseFloat(initialBalance.innerText);
+    const initialBalanceText=currentBalance();
 
     if (isAdd == true) {
         const afterDepositeBalance = fileldInput + initialBalanceText;
@@ -57,7 +64,8 @@ depositeSubmit.addEventListener('click', function () {
     // const afterDeposite = deposite + initialDepositeText;
     // initialDeposite.innerText = afterDeposite;
 
-    updateTotalField('initial_deposite',deposite);
+    if (deposite > 0) {
+        updateTotalField('initial_deposite', deposite);
     // const initialDeposite = initial_balance('initial_deposite');
     // const initialBalance = initial_balance('initial_balance');
     
@@ -69,6 +77,8 @@ depositeSubmit.addEventListener('click', function () {
     // initialBalance.innerText = afterDepositeBalance;
     // enter_Amount_Field.value = '';
     BalanceHandle(deposite,true);
+    }
+    
 })
 
 
@@ -85,6 +95,8 @@ withdrawalSubmit.addEventListener('click', function () {
     // const initialWithdrawText = parseFloat(initialWithdraw.innerText);
     // const afterWithdraw = withdraw + initialWithdrawText;
     // initialWithdraw.innerText = afterWithdraw;
+    const current_store_balance = currentBalance();
+    if (withdraw > 0 && current_store_balance > withdraw) {
     updateTotalField('initial_withdraw',withdraw);
 
     // const initialBalance = document.getElementById('initial_balance');
@@ -93,4 +105,5 @@ withdrawalSubmit.addEventListener('click', function () {
     // initialBalance.innerText = afterwithdralBalance;
     // enter_Amount_Field1.value = '';
     BalanceHandle(withdraw,false);
+    }
 })
